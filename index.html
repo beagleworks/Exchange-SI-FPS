@@ -8,22 +8,32 @@
 </head>
 <body>
     <div class="container">
-        <h1>単位変換器</h1>
+        <h1 id="title">単位変換器</h1>
         <form id="converter-form">
-            <label for="direction">変換方向:</label>
+            <label for="language">言語 / Language:</label>
+            <div>
+                <input type="radio" id="lang-ja" name="language" value="ja" checked>
+                <label for="lang-ja">日本語</label>
+            </div>
+            <div>
+                <input type="radio" id="lang-en" name="language" value="en">
+                <label for="lang-en">English</label>
+            </div>
+
+            <label for="direction" id="direction-label">変換方向:</label>
             <div>
                 <input type="radio" id="us-to-si" name="direction" value="us-to-si" checked>
-                <label for="us-to-si">アメリカヤードポンド法 → 国際単位</label>
+                <label for="us-to-si" id="us-to-si-label">アメリカヤードポンド法 → 国際単位</label>
             </div>
             <div>
                 <input type="radio" id="si-to-us" name="direction" value="si-to-us">
-                <label for="si-to-us">国際単位 → アメリカヤードポンド法</label>
+                <label for="si-to-us" id="si-to-us-label">国際単位 → アメリカヤードポンド法</label>
             </div>
             
             <label for="value">値:</label>
             <input type="number" id="value" step="any" required>
             
-            <label for="from-unit">変換元単位:</label>
+            <label for="from-unit" id="from-unit-label">変換元単位:</label>
             <select id="from-unit">
                 <option value="inch">インチ (inch)</option>
                 <option value="foot">フィート (foot)</option>
@@ -32,9 +42,12 @@
                 <option value="pound">ポンド (pound)</option>
                 <option value="ounce">オンス (ounce)</option>
                 <option value="fahrenheit">華氏 (Fahrenheit)</option>
+                <option value="sqft">平方フィート (sqft)</option>
+                <option value="gallon">ガロン (gallon)</option>
+                <option value="mph">マイル/時 (mph)</option>
             </select>
-            
-            <label for="to-unit">変換先単位:</label>
+
+            <label for="to-unit" id="to-unit-label">変換先単位:</label>
             <select id="to-unit">
                 <option value="cm">センチメートル (cm)</option>
                 <option value="m">メートル (m)</option>
@@ -42,9 +55,12 @@
                 <option value="kg">キログラム (kg)</option>
                 <option value="g">グラム (g)</option>
                 <option value="celsius">摂氏 (Celsius)</option>
+                <option value="sqm">平方メートル (sqm)</option>
+                <option value="liter">リットル (liter)</option>
+                <option value="kmh">km/h (kmh)</option>
             </select>
             
-            <button type="submit">変換</button>
+            <button type="submit" id="convert-button">変換</button>
         </form>
         <div id="result"></div>
     </div>
